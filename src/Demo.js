@@ -1,43 +1,40 @@
-import React, {
-    Component
-} from 'react';
-import './Demo.css';
-import ReactDOM from 'react-dom';
+import React, { useState, Component } from 'react'
 
+// const Demo = () => {
+//     // hook in react that will update any where
+//     const [value, setValue] = useState(0);
+//     return (
+//         <div>
+//             <h1>Counter: {value}</h1>
+//             <button onClick={() => setValue(value + 1)}>Increment</button>&nbsp;
+//             <button onClick={() => setValue(value - 1)}>Decrement</button>
+//         </div>
+//     )
+// }
+
+// using class with state object
 class Demo extends Component {
     constructor() {
         super();
-        this.State = {
-            name: "from state"
+        this.state = {
+          message: 'Hello Arjun'
         }
-       
-    }
- 
-    click = () => {
-            this.setState({ name: 'new state value' }, () => 
-            console.log(this.state.name));
-    }
-    
-
+      }
+    changeMessage() {
+        this.setState(prevState => ({
+          message: prevState.message + ' Khetia'
+        }));
+      }
     render() {
-        return <div className='main'>
-            {/* <div class='main'>  can't write class javascript key work .... read has className */}
-            <h4> {this.State.name} </h4>
-            <p>  Position: {this.props.position}</p>
-            <button onClick={this.click}>click to change</button>
-        </div>
-
+        return (
+            <div>
+                <div>
+                    <h4>{this.state.message}</h4>
+                    <button onClick={() => this.changeMessage()}>Submit</button>
+                </div>
+            </div>
+        )
     }
 }
-
-// function type component
-
-// const Demo = (props) =>{
-//     return <div className='main'>
-//     {/* <div class='main'>  can't write class javascript key work .... read has className */}  
-//         <h4> Demo Component is loaded.. </h4>
-//         <p>  Position: {props.position}</p>
-//     </div>
-// }
 
 export default Demo;

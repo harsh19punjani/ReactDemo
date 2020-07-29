@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Demo from './Demo';
+import ToDoList from './ToDoList';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Demo position='Senior Software developer' />  {/*component name */}
+      {/* <Demo position='Senior Software developer' />  */}
+      <ToDoList/>
     {/* <App />  */}
   
   </React.StrictMode>,
